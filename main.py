@@ -10,7 +10,7 @@ print(n)
 # создаем пустой DataFrame с нужными заголовками столбцов
 df = pd.DataFrame(columns=[chr(i) for i in range(65, 65+len(lst[0]))])
 
-# заполняем DataFrame данными из списка
+
 for i, row in enumerate(lst, 1):
     df.loc[i] = row
 
@@ -38,7 +38,7 @@ for combo in combos:
     new_row = df.loc[combo[0]] + df.loc[combo[1]]
     x = new_row.values
     print(x)
-    temp_arr.append(list(new_row[new_row.isin(['0+','0-','+0','-0','+-','-+'])].index))
+    temp_arr.append(list(new_row[new_row.isin(['0+','0-','+0','-0','+-','-+', '+–', '+–', '0–', '–0'])].index))
     c+=1
 print(len(temp_arr), len(combos))
 
@@ -67,7 +67,7 @@ for combo in new_combos:
     df_new.loc[combo[0][0], combo[0][1]] = None
     df_new.loc[combo[0][1], combo[0][1]] = None
 print(df_new)
-df_new.to_excel('новый_файл1.xlsx')
+df_new.to_excel('./templates/firstTable.xlsx')
 
 #7
 df_new.loc[1,1] = None
@@ -77,5 +77,5 @@ for combo in new_combos:
     df_new.loc[combo[0][1], combo[0][1]] = None
 
 print(df_new)
-df_new.to_excel('новый_файл2.xlsx')
+df_new.to_excel('./templates/secondTable.xlsx')
 

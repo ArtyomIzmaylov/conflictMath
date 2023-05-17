@@ -17,15 +17,15 @@ minus_nodes = [node for node in G.nodes() if df.loc[node, 'col']=='–']
 
 for zero_node in zero_nodes:
     for plus_node in plus_nodes:
-        G.add_edge(zero_node, plus_node, color='#E6399B')
+        G.add_edge(zero_node, plus_node, color='#C10087')
     for minus_node in minus_nodes:
-        G.add_edge(zero_node, minus_node, color='#E6399B')
+        G.add_edge(zero_node, minus_node, color='#C10087')
 
 
 for node1 in G.nodes():
     for node2 in G.nodes():
         if node1 != node2 and df.loc[node1, 'col'] == df.loc[node2, 'col'] and df.loc[node1, 'col'] not in [0, '–', '+']:
-            G.add_edge(node1, node2, color='red')
+            G.add_edge(node1, node2, color='F93E58')
 
 # рисуем граф
 pos = nx.circular_layout(G)
@@ -35,9 +35,9 @@ edge_colors = [G[u][v]['color'] for u,v in G.edges()]
 node_colors = []
 for node in G.nodes():
     if df.loc[node, 'col'] != 0:
-        node_colors.append('red')
+        node_colors.append('#F93E58')
     else:
-        node_colors.append('#3E94D1')
+        node_colors.append('#9240D5')
 
 nx.draw(G, pos, width=3, edgecolors='black', labels=labels, with_labels=True,
         font_size=16, edge_color=edge_colors,
