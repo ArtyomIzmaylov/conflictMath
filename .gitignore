@@ -1,3 +1,5 @@
 
 /drawGraph/temp.py
-/templates
+/.idea
+/__pycache__
+/conflict
