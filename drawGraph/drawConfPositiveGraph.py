@@ -17,7 +17,6 @@ G = nx.Graph()
 
 # добавляем вершины в граф из индексов df
 G.add_nodes_from(df.index)
-
 # соединяем 0 с вершинами +/-/-
 zero_nodes = [node for node in G.nodes() if df.loc[node, 'col']=='0']
 plus_nodes = [node for node in G.nodes() if df.loc[node, 'col']=='+']
@@ -48,9 +47,7 @@ for node in G.nodes():
     else:
         node_colors.append('#9240D5')
 
-nx.draw(G, pos, width=3, edgecolors='black', labels=labels, with_labels=True,
-        font_size=16, edge_color=edge_colors,
-        node_color=node_colors, node_size=2500, )
+nx.draw(G, pos, width=3, edgecolors='black', labels=labels, with_labels=True,font_size=16, edge_color=edge_colors,node_color=node_colors, node_size=2500, )
 plt.axis('on')
 plt.figtext(1, 0.01, 'Made by Artyom Gaibovich©', ha='right', va='bottom', size = 10)
 plt.savefig('../templates/my_plotConfPositive.png')

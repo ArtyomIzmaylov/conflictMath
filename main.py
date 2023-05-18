@@ -2,12 +2,10 @@ import pandas as pd
 import numpy as np
 
 from readFile.excelRead import matrix #импортирую [[]]
-lst = [['+', '+', '+'], ['0', '0', '-'], ['+', '0', '+'], ['-', '0', '+']]
 lst = matrix
 for i in range(len(lst)):
     for j in range(len(lst[i])):
         lst[i][j] = lst[i][j].replace('–', '-')
-
 print(lst[0])
 n = len(lst[0])
 print(n)
