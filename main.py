@@ -4,13 +4,18 @@ import numpy as np
 from excelRead import matrix #импортирую [[]]
 lst = [['+', '+', '+'], ['0', '0', '-'], ['+', '0', '+'], ['-', '0', '+']]
 lst = matrix
+for i in range(len(lst)):
+    for j in range(len(lst[i])):
+        lst[i][j] = lst[i][j].replace('–', '-')
 
+print(lst[0])
 n = len(lst[0])
 print(n)
 # создаем пустой DataFrame с нужными заголовками столбцов
 df = pd.DataFrame(columns=[chr(i) for i in range(65, 65+len(lst[0]))])
+print(df)
 
-
+print(df)
 for i, row in enumerate(lst, 1):
     df.loc[i] = row
 
@@ -38,7 +43,7 @@ for combo in combos:
     new_row = df.loc[combo[0]] + df.loc[combo[1]]
     x = new_row.values
     print(x)
-    temp_arr.append(list(new_row[new_row.isin(['0+','0-','+0','-0','+-','-+', '+–', '+–', '0–', '–0'])].index))
+    temp_arr.append(list(new_row[new_row.isin(['0+','0-','+0','-0','+-','-+'])].index))
     c+=1
 print(len(temp_arr), len(combos))
 
