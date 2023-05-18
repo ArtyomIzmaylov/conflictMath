@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# -*- coding: utf-8 -*-
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
@@ -10,8 +11,6 @@ data = row[symbol].values.astype(str).tolist()
 
 data = [str(i).replace('0', '0') for i in data]
 data = [element.replace('–', '-') for element in data]
-
-
 df = pd.DataFrame({'col': data}, index=range(1, len(data)+1))
 
 G = nx.Graph()

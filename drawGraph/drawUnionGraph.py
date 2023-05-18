@@ -7,8 +7,6 @@ from readFile.readText import symbol
 
 
 data = row[symbol].values.astype(str).tolist()
-
-
 data = [str(i).replace('0', '0') for i in data]
 data = [element.replace('–', '-') for element in data]
 
