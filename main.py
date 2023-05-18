@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 
-from excelRead import matrix #импортирую [[]]
+from readFile.excelRead import matrix #импортирую [[]]
 lst = [['+', '+', '+'], ['0', '0', '-'], ['+', '0', '+'], ['-', '0', '+']]
 lst = matrix
 for i in range(len(lst)):

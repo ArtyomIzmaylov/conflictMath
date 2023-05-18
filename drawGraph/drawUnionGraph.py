@@ -2,8 +2,11 @@
 import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
+from readFile.excelRead import df as row
+from readFile.readText import symbol
 
-data = [0, '–', 0, '+', '+', '+', '–', '–', '–', 0, '+', '+']
+
+data = row[symbol].values.astype(str).tolist()
 
 
 data = [str(i).replace('0', '0') for i in data]
