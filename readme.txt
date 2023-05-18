@@ -13,6 +13,11 @@ cd C:\Саморазвитие\Программирование\Python course\co
 
 4)Пропишите следующую команду:
 conflict\Scripts\activate
+5)пропишите команды:
+pip install pandas
+pip install openpyxl
+pip install numpy
+pip install matplotlib
 
 Виртуальное окружение настроено, консоль не закрывайте, перейдем к настройке входных параметров.
 
