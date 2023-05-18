@@ -1,0 +1,1 @@
+Если python не установлен, установите его https://www.python.org/downloads/
