@@ -1,15 +1,9 @@
 # -*- coding: utf-8 -*-
-import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
-from readFile.excelRead import df as row
-from readFile.readText import symbol
 
 
-data = row[symbol].values.astype(str).tolist()
-data = [str(i).replace('0', '0') for i in data]
-data = [element.replace('–', '-') for element in data]
-df = pd.DataFrame({'col': data}, index=range(1, len(data)+1))
+
 
 def makeGraph(relation, df):
     G = nx.Graph()
@@ -60,9 +54,6 @@ def drawGraph(df, G, relation, relationWord): #relation = '-', '+', '0'
             node_color=node_colors, node_size=2500, )
     plt.axis('on')
     plt.figtext(1, 0.01, 'Made by Artyom Gaibovich©', ha='right', va='bottom', size=10)
-    plt.savefig(f"../templates/my_plotConf{relationWord}.png")
+    plt.savefig(f"./templates/my_plotConf{relationWord}.png")
     plt.show()
 
-drawGraph(df, makeGraph('+', df), '+', 'Positive')
-drawGraph(df, makeGraph('-', df), '-', 'Negative')
-drawGraph(df, makeGraph('0', df), '0', 'Neutral')
