@@ -4,7 +4,7 @@ from readFile.readText import symbol
 from makeTable.makeTable import makeTable
 from drawGraph.drawGraphs import makeGraph, drawGraph
 
-symbol = 'A'
+symbol = symbol
 data = row[symbol].values.astype(str).tolist()
 data = [str(i).replace('0', '0') for i in data]
 data = [element.replace('–', '-') for element in data]
