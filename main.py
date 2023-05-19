@@ -12,7 +12,6 @@ df = pd.DataFrame({'col': data}, index=range(1, len(data)+1))
 
 
 makeTable()
-
 drawGraph(df, makeGraph('+', df), '+', 'Positive')
 drawGraph(df, makeGraph('-', df), '-', 'Negative')
 drawGraph(df, makeGraph('0', df), '0', 'Neutral')
