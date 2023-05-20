@@ -12,7 +12,7 @@ C:\Саморазвитие\Программирование\Python course\confl
 cd C:\Саморазвитие\Программирование\Python course\conflictMath
 
 4)Пропишите следующую команду:
-conflict\Scripts\activate
+venv\Scripts\activate
 
 Виртуальное окружение настроено, консоль не закрывайте, перейдем к настройке входных параметров.
 
